@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fillViewport="true"
+    >
+
+    <RelativeLayout
+        android:id="@+id/activity_register_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <TextView
+            android:id="@+id/Register"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/register"
+            android:layout_marginTop="25dp"
+            android:textAlignment="center"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
+
+
+        <EditText
+            android:id="@+id/nome"
+            android:hint="Nome:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/Register"
+            />
+
+        <EditText
+            android:id="@+id/Telephone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/Telephone"
+            android:layout_below="@id/nome"
+            android:inputType="phone"
+            />
+
+        <EditText
+            android:id="@+id/BirthDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/BirthDate"
+            android:layout_below="@id/Telephone"
+            android:inputType="date"
+            android:maxLength="8"
+            />
+
+        <EditText
+            android:id="@+id/Email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/Email"
+            android:layout_below="@id/BirthDate"
+            android:inputType="textEmailAddress"
+            />
+
+        <EditText
+            android:id="@+id/Address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/Address"
+            android:layout_below="@id/Email"
+            />
+
+        <Button
+            android:id="@+id/registerButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerInParent="true"
+            android:text="@string/Register" />
+
+    </RelativeLayout>
+</androidx.core.widget.NestedScrollView>

@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">crud-kotlin</string>
+    <string name="register">Cadastro</string>
+    <string name="Telephone">Telefone:</string>
+    <string name="BirthDate">Data de Nascimento:</string>
+    <string name="Email">Email:</string>
+    <string name="Address">Endereço:</string>
+    <string name="Register">Cadastrar</string>
+    <string name="Delete">Excluir</string>
 </resources>
