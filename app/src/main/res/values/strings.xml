@@ -7,4 +7,5 @@
     <string name="Address">Endereço:</string>
     <string name="Register">Cadastrar</string>
     <string name="Delete">Excluir</string>
+    <string name="Editar">Editar</string>
 </resources>
