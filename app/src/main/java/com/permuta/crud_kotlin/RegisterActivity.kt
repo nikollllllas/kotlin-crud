@@ -53,12 +53,12 @@ class RegisterActivity : AppCompatActivity() {
                     phone = phone,
                     address = address
                 )
-                AppDatabase(this@Register).getPersonDao().addPerson(person)
+                AppDatabase(this@RegisterActivity).getPersonDao().addPerson(person)
                 finish()
             } else {
                 val p = Person(name, email, birthDate, phone, address)
                 p.id = person?.id ?: 0
-                AppDatabase(this@Register).getPersonDao().updatePerson(p)
+                AppDatabase(this@RegisterActivity).getPersonDao().updatePerson(p)
                 finish()
             }
         }

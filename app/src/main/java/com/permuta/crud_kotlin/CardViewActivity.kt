@@ -23,7 +23,7 @@ class CardViewActivity : AppCompatActivity() {
         binding = ActivityCardViewBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.adicionar.setOnClickListener(){
-            val intent = Intent(this, Register::class.java)
+            val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
         }
 
@@ -36,27 +36,27 @@ class CardViewActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         lifecycleScope.launch {
-            val personList = AppDatabase(this@CardView).getPersonDao().getAllPerson()
+            val personList = AppDatabase(this@CardViewActivity).getPersonDao().getALLPerson()
 
             mAdapter = PersonAdapter()
             binding.recyclerView.apply {
-                layoutManager = LinearLayoutManager(this@CardView)
+                layoutManager = LinearLayoutManager(this@CardViewActivity)
                 adapter = mAdapter
                 setAdapter(personList)
 
                 mAdapter?.setOnActionEditListener {
-                    val intent = Intent(this@CardView, Register::class.java)
+                    val intent = Intent(this@CardViewActivity, RegisterActivity::class.java)
                     intent.putExtra("Data", it)
                     startActivity(intent)
                 }
 
                 mAdapter?.setOnActionDeleteListener {
-                    val builder = AlertDialog.Builder(this@CardView)
+                    val builder = AlertDialog.Builder(this@CardViewActivity)
                     builder.setMessage("Tem certeza que quer excluir?")
                     builder.setPositiveButton("Sim") { p0, p1 ->
                         lifecycleScope.launch {
-                            AppDatabase(this@CardView).getPersonDao().deletePerson(it)
-                            val pList = AppDatabase(this@CardView).getPersonDao().getAllPerson()
+                            AppDatabase(this@CardViewActivity).getPersonDao().deletePerson(it)
+                            val pList = AppDatabase(this@CardViewActivity).getPersonDao().getALLPerson()
                             setAdapter(pList)
                         }
                         p0.dismiss()
