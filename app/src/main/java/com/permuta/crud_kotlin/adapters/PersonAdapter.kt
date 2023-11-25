@@ -16,7 +16,7 @@ class PersonAdapter : RecyclerView.Adapter<PersonAdapter.PersonViewHolder>() {
     private var actionDelete: ((Person) -> Unit)? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PersonViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.card_item_person_view_holder, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.card_person_view_holder, parent, false)
 
         return PersonViewHolder(view)
     }

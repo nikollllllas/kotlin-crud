@@ -1,7 +1,10 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("kotlin-android")
+    id("kotlin-kapt")
 }
+
 
 android {
     namespace = "com.permuta.crud_kotlin"
@@ -37,15 +40,7 @@ android {
         jvmTarget = "1.8"
     }
     buildFeatures {
-        compose = true
-    }
-    composeOptions {
-        kotlinCompilerExtensionVersion = "1.4.3"
-    }
-    packaging {
-        resources {
-            excludes += "/META-INF/{AL2.0,LGPL2.1}"
-        }
+        dataBinding = true
     }
 }
 
@@ -69,6 +64,8 @@ dependencies {
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
+    implementation("com.android.databinding:compiler:3.1.4")
+    implementation ("com.android.support:multidex:1.0.3")
 
     implementation("androidx.cardview:cardview:1.0.0")
 }
